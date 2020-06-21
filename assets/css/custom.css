@@ -12,6 +12,11 @@
 
 
 
+
+
+
+
+
 .square-flip{
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
@@ -39,7 +44,7 @@
   }
   .square-flip{
       width:310px;
-      height:250px;
+      height:400px;
       margin: 20px 0px 20px 5px;
   }
   .square,.square2{
@@ -160,6 +165,8 @@ transform: translateY(-50%) translateX(650px) translateZ(60px) scale(.88);
 
       transform-style: preserve-3d;
       z-index:2;
+
+      place-content: start space-evenly;
   }
 
 

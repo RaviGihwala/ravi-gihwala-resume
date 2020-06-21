@@ -347,61 +347,62 @@
             <div class="square-container2 w3-small w3-justify">
               <div class="align-center"></div>
               
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
               <p class="w3-left w3-small">
-                <i class="fa fa-check" aria-hidden="true">
+                <i class="fa fa-check w3-left" aria-hidden="true">
                   <span>How Your Visitors Use Mobile</span>
                 </i>
-                <i class="fa fa-check" aria-hidden="true">
+                <i class="fa fa-check w3-left" aria-hidden="true">
+                  <span>Planning</span>
+                </i>
+              
+                <i class="fa fa-check w3-right" aria-hidden="true"><span>Media Queries</span></i>
+
+                <i class="fa fa-check w3-left" aria-hidden="true">
                   <span>Navigation Importance</span>
                 </i>
-                <i class="fa fa-check" aria-hidden="true">
-                  <span>Navigation Importance</span>
+                <i class="fa fa-check w3-right" aria-hidden="true"><span>Frameworks</span></i>
+
+                <i class="fa fa-check w3-left" aria-hidden="true"><span>Minimalist Design</span></i>
+     
+
+                <i class="fa fa-check w3-left" aria-hidden="true">
+                  <span>Optimize Images</span>
                 </i>
-                <i class="fa fa-check" aria-hidden="true">
-                  <span>Navigation Importance</span>
+          
+
+                <i class="fa fa-check w3-right" aria-hidden="true">
+                  <span>Mobile First Approach</span>
                 </i>
+
+                <i class="fa fa-check w3-left" aria-hidden="true"><span>Optimize Typography</span></i>
+
+
+
+                <i class="fa fa-check w3-left" aria-hidden="true"><span>Microinteractions</span></i>
+
 
               </p>
               
-              <p class="w3-right">
-                <i class="fa fa-check" aria-hidden="true">
-                  <span class="w3-padding-small">Planning</span>
-                </i>
-              </p>
+      
               
-              <p class="w3-left">
-                <i class="fa fa-check" aria-hidden="true">
-                  <span class="w3-padding-small">Navigation Importance</span>
-                </i>
-              </p>
+            
 
-              <p class="w3-right">
-                <i class="fa fa-check" aria-hidden="true">
-                  <span class="w3-padding-small">Optimize Images</span>
-                </i>
-              </p>
               
-              <p class="w3-left">
-                <i class="fa fa-check" aria-hidden="true">
-                  <span class="w3-padding-small">Mobile First Approach</span>
-                </i>
-              </p>
+          
 
-              <p class="w3-right">
-                <i class="fa fa-check" aria-hidden="true"><span class="w3-padding-small">Media Queries</span></i>
-              </p>
+          
 
-              <p class="w3-left">
-                <i class="fa fa-check" aria-hidden="true"><span class="w3-padding-small">Optimize Typography</span></i>
-              </p>
-
-              <p class="w3-right">
-                <i class="fa fa-check" aria-hidden="true"><span class="w3-padding-small">Microinteractions</span></i>
-              </p>
-
-              <p class="w3-left">
-                <i class="fa fa-check" aria-hidden="true"><span class="w3-padding-small">Frameworks</span></i>
-              </p>
+            
 
               <p class="w3-right">
                 <i class="fa fa-check" aria-hidden="true"><span class="w3-padding-small">Minimalist Design</span></i>
@@ -737,22 +738,50 @@
       </div><br>
       <p>Let's get in touch. Send me a message:</p>
 
-      <form action="/action_page.php" target="_blank">
-        <p><input class="w3-input w3-padding-16 w3-border w3-border-teal" type="text" placeholder="Name" required
-            name="Name"></p>
-        <p><input class="w3-input w3-padding-16 w3-border w3-border-teal" type="text" placeholder="Email" required
-            name="Email"></p>
-        <p><input class="w3-input w3-padding-16 w3-border w3-border-teal" type="text" placeholder="Subject" required
-            name="Subject"></p>
-        <p><input class="w3-input w3-padding-16 w3-border w3-border-teal" type="text" placeholder="Message" required
-            name="Message"></p>
-        <p>
+      <form action="/action_page.php" target="_blank" name="frmContact" id="frmContact" method="POST" enctype="multipart/form-data" onsubmit="return validationContactForm()">
+
+        <p id="userName-info" class="info">
+          <input class="w3-input w3-padding-16 w3-border w3-border-teal" type="text" placeholder="Name" required
+            name="name" id="name">
+          </p>
+
+
+        <p id="userEmail-info" class="info">
+          <input class="w3-input w3-padding-16 w3-border w3-border-teal" type="text" placeholder="Email" required
+            name="email" id="email">
+          </p>
+
+
+        <p id="subject-info" class="info">
+          <input class="w3-input w3-padding-16 w3-border w3-border-teal" type="text" placeholder="Subject" required
+            name="subject" id="subject">
+          </p>
+
+
+
+          <p id="userMessage-info" class="info">
+            <input class="w3-input w3-padding-16 w3-border w3-border-teal" type="text" placeholder="Message" required
+            name="message" id="message">
+          </p>
+        
+        
+          <p>
           <button
             class="w3-button w3-black w3-padding-large w3-section w3-text-teal w3-border w3-border-teal w3-hover-teal w3-hover-text-black w3-hover-border-black"
-            type="submit">
+            type="submit" name="send">
             <i class="fa fa-paper-plane"></i> SEND MESSAGE
           </button>
         </p>
+        <div id="statusMessage"> 
+          ?php 
+          if (! empty($message)) {
+              ?
+              <p class="<?php echo $type; ?>Message">?php echo $message; ?</p>
+          ?php
+          }
+          ?
+      </div>
+
       </form>
 
     </div> <!-- Contact Section End -->
@@ -783,6 +812,51 @@
       }
     }
   </script>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"
+type="text/javascript"></script>
+<script type="text/javascript">
+function validateContactForm() {
+    var valid = true;
+
+    $(".info").html("");
+    $(".input-field").css('border', '#e0dfdf 1px solid');
+    var userName = $("#Name").val();
+    var userEmail = $("#Email").val();
+    var subject = $("#subject").val();
+    var content = $("#message").val();
+    
+    if (Name == "") {
+        $("#Name-info").html("Required.");
+        $("#Name").css('border', '#e66262 1px solid');
+        valid = false;
+    }
+    if (Email == "") {
+        $("#Email-info").html("Required.");
+        $("#Email").css('border', '#e66262 1px solid');
+        valid = false;
+    }
+    if (!Email.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
+    {
+        $("#Email-info").html("Invalid Email Address.");
+        $("#Email").css('border', '#e66262 1px solid');
+        valid = false;
+    }
+
+    if (subject == "") {
+        $("#subject-info").html("Required.");
+        $("#subject").css('border', '#e66262 1px solid');
+        valid = false;
+    }
+    if (content == "") {
+        $("#userMessage-info").html("Required.");
+        $("#message").css('border', '#e66262 1px solid');
+        valid = false;
+    }
+    return valid;
+}
+</script>
+
 </body>
 
 </html>
